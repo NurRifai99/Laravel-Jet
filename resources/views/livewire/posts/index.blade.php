@@ -9,5 +9,24 @@
         </h2>
     </x-slot>
 
-    <a href="/create" class="bg-blue-500 px-5 py-3 m-5">Create</a>
+    <div class="w-auto mx-7 my-7 px-10 bg-slate-500 flex flex-col">
+        <a href="/create" class="bg-blue-500 w-fit px-5 py-3 my-3">Create</a>
+        <table class="table-fixed">
+            <thead class="bg-red-600">
+                
+                    <th class="bg-green-500">Title</th>
+                    <th>Konten</th>
+                
+            </thead>
+            
+            @foreach ($posts as $post)
+                <tr>
+                    <td>{{ $post->title }}</td>
+                    <td>{{ $post->content }}</td>
+                </tr>
+            @endforeach
+            </tbody>
+        </table>
+    </div>
+    {{ $posts->Links() }}
 </div>
